@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: fullstack
-        image: replace
+        image: shabdoc/streamlit-app:09de519497cfce1149240e1774133a24a693a2a6
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
