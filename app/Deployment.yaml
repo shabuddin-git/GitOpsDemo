@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Streamlit-deployment
+  name: streamlit-deployment
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: fullstack
-  replicas: 3
   template:
     metadata:
       labels:
         app: fullstack
     spec:
       containers:
-      - name: fullstack
-        image: shabdoc/streamlit-app:09de519497cfce1149240e1774133a24a693a2a6
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 8080
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "500m"
-          limits:
-            memory: "512Mi"
-            cpu: "1"
+        - name: fullstack
+          image: shabdoc/streamlit-app:09de519497cfce1149240e1774133a24a693a2a6
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "500m"
+            limits:
+              memory: "512Mi"
+              cpu: "1"
